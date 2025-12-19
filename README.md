@@ -24,9 +24,7 @@
 
 ## 🧐 2. Motivation (연구 배경)
 ### ❌ The Problem: Random Sampling의 불안정성
-
 ![Figure 1: Random Selection Limit](./assets/figure1.png)
-
 * 기존 소수-샷 학습은 학습 데이터를 무작위(Random)로 선택합니다.
 * 이는 매 훈련 시 데이터 분포의 불균형을 초래하여, 모델의 정확도 차이가 크게 발생하고 특정 데이터에 과적합될 위험이 있습니다.
 
@@ -36,8 +34,7 @@
 우리는 데이터의 통계적 특성을 반영하여 학습 데이터를 선별하는 **유사도(SR) 기반 파이프라인**을 설계했습니다.
 
 ### 3.1. System Architecture
-
-
+![Figure 4: Proposed Architecture](./assets/figure4.png)
 1.  **Preprocessing:** 시계열 진동 데이터를 윈도우 슬라이싱하여 입력 벡터 구성.
 2.  **Data Selection (Core Logic):** 데이터 분포의 평균($\mu$)과 분산($\sigma$)을 기반으로 학습에 가장 효과적인 데이터를 우선 선별.
 3.  **Siamese Network:** 샴 네트워크 구조를 통해 결함 데이터 간의 거리(Distance)를 학습하여 분류 수행.
@@ -73,8 +70,7 @@ Case Western Reserve University(CWRU)의 베어링 결함 데이터를 사용하
 * **안정성:** 데이터가 부족한 산업 현장 환경에서도 **80% 이상의 높은 진단 정확도**를 확보했습니다.
 
 ### 4.3. Qualitative Results (Confusion Matrix)
-
-
+![Figure 5: Confusion Matrix](./assets/figure5.png)
 * 혼동 행렬(Confusion Matrix) 분석 결과, 제안하는 방법이 예측 라벨과 실제 라벨을 정확하게 분류함을 확인했습니다.
 
 ---
